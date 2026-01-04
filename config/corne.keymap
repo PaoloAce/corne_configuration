@@ -30,10 +30,10 @@
 
             display-name = "Base";
             bindings = <
-&kp ESCAPE  &kp A       &kp Z           &kp E         &kp R        &kp T        &kp Y      &mt U U      &kp I          &kp O            &kp P            &kp BACKSPACE
-&kp TAB     &mt LGUI Q  &mt LEFT_ALT S  &mt LSHIFT D  &mt LCTRL F  &kp G        &kp H      &mt RCTRL J  &mt RSHFT K    &mt RIGHT_ALT L  &mt RGUI M       &kp DELETE
-&none       &kp W       &kp X           &mt C C       &kp V        &kp B        &kp N      &kp COMMA    &kp SEMICOLON  &kp COLON        &kp EXCLAMATION  &kp ASTERISK
-                                        &kp LGUI      &mo 1        &kp ENTER    &kp SPACE  &mo 2        &kp RALT
+&kp DEL  &kp A       &kp Z           &kp E         &kp R         &kp T        &kp Y      &mt U U      &kp I          &kp O            &kp P            &kp BACKSPACE
+&kp E    &mt LGUI Q  &mt LEFT_ALT S  &mt LSHIFT D  &mt LCTRL F   &kp G        &kp H      &mt RCTRL J  &mt RSHFT K    &mt RIGHT_ALT L  &mt RGUI M       &kp E
+&kp A    &kp W       &kp X           &mt C C       &kp V         &kp B        &kp N      &kp COMMA    &kp SEMICOLON  &kp COLON        &kp EXCLAMATION  &kp APOS
+                                     &kp LGUI      &lt 1 ESCAPE  &kp ENTER    &kp SPACE  &lt 2 TAB    &kp RALT
             >;
         };
 
@@ -46,10 +46,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp ESCAPE        &kp A  &kp  &kp E     &kp  &kp          &kp MINUS  &kp N7  &kp N8    &kp N9  &kp SLASH     &kp BACKSPACE
-&kp LEFT_SHIFT    &kp    &kp  &kp       &kp  &kp          &kp PLUS   &kp N4  &kp N5    &kp N6  &kp ASTERISK  &kp HOME
-&kp LEFT_CONTROL  &kp    &kp  &kp       &kp  &kp          &kp N0     &kp N1  &kp N2    &kp N3  &kp COMMA     &kp END
-                              &kp LGUI  &kp  &kp ENTER    &kp SPACE  &kp     &kp RALT
+&kp ESCAPE        &kp  &kp HOME  &kp UP_ARROW  &kp END    &kp          &kp MINUS  &kp N7  &kp N8    &kp N9  &kp SLASH     &kp CARET
+&kp LEFT_SHIFT    &kp  &kp LEFT  &kp DOWN      &kp RIGHT  &kp          &kp PLUS   &kp N4  &kp N5    &kp N6  &kp ASTERISK  &kp PERCENT
+&kp LEFT_CONTROL  &kp  &kp       &kp           &kp        &kp          &kp N0     &kp N1  &kp N2    &kp N3  &kp COMMA     &kp END
+                                 &kp LGUI      &trans     &kp ENTER    &kp SPACE  &trans  &kp RALT
             >;
         };
 
@@ -62,19 +62,19 @@
 
             display-name = "Raise";
             bindings = <
-&kp ESCAPE        &kp AMPERSAND  &kp HASH  &kp E     &kp SINGLE_QUOTE      &kp DOUBLE_QUOTES        &kp MINUS         &kp UNDERSCORE     &kp PIPE       &kp AT_SIGN  &kp EQUAL  &kp LC(BACKSPACE)
-&kp LEFT_SHIFT    &kp TILDE      &trans    &trans    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp UP       &trans     &kp LC(DEL)
-&kp LEFT_CONTROL  &trans         &trans    &trans    &kp LESS_THAN         &kp GREATER_THAN         &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LEFT       &kp DOWN     &kp RIGHT  &trans
-                                           &kp LGUI  &trans                &trans                   &trans            &trans             &kp RALT
+&kp LC(DEL)  &kp AMPERSAND  &kp TILDE       &kp HASH          &kp GRAVE             &kp DOUBLE_QUOTES        &kp MINUS         &kp UNDERSCORE  &kp PIPE      &kp AT_SIGN  &kp EQUAL          &kp LC(BACKSPACE)
+&none        &none          &kp LEFT_BRACE  &kp RIGHT_BRACE   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp LS(HOME)      &kp HOME        &kp UP_ARROW  &kp END      &kp LS(END)        &none
+&none        &none          &kp LESS_THAN   &kp GREATER_THAN  &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &kp LS(LC(LEFT))  &kp LEFT        &kp DOWN      &kp RIGHT    &kp LS(LC(RIGHT))  &none
+                                            &kp LGUI          &trans                &kp ENTER                &kp SPACE         &trans          &kp RALT
             >;
         };
 
         macro1 {
             bindings = <
-&none  &none  &none  &none  &mt LC(X) LC(C)  &kp LC(V)    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none            &none        &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none            &none        &none  &none  &none  &none  &none  &none
-                     &none  &none            &kp ENTER    &none  &none  &none
+&none  &none  &kp LC(UP_ARROW)  &kp LC(DOWN)   &mt LC(X) LC(C)  &kp LC(V)    &none  &none  &none  &none  &none  &none
+&none  &none  &none             &kp LC(LS(K))  &kp LC(S)        &kp F5       &none  &none  &none  &none  &none  &none
+&none  &none  &none             &none          &kp R            &kp C        &none  &none  &none  &none  &none  &none
+                                &none          &none            &kp ENTER    &none  &none  &none
             >;
         };
 
