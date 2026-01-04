@@ -12,9 +12,9 @@
     combos {
         compatible = "zmk,combos";
 
-        enter {
-            bindings = <&kp ENTER>;
-            key-positions = <38 39>;
+        config_layout {
+            bindings = <&mo 4>;
+            key-positions = <37 40>;
         };
     };
 
@@ -30,10 +30,10 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB           &kp A  &kp Z  &kp E     &kp R  &kp T        &kp Y      &kp U      &kp I          &kp O      &kp P            &kp CARET
-&kp LSHFT         &kp Q  &kp S  &kp D     &kp F  &kp G        &kp H      &kp J      &kp K          &kp L      &kp M            &kp BACKSPACE
-&kp LEFT_CONTROL  &kp W  &kp X  &kp C     &kp V  &kp B        &kp N      &kp COMMA  &kp SEMICOLON  &kp COLON  &kp EXCLAMATION  &kp ASTERISK
-                                &kp LGUI  &mo 1  &kp ENTER    &kp SPACE  &mo 2      &kp RALT
+&kp ESCAPE  &kp A       &kp Z           &kp E         &kp R        &kp T        &kp Y      &mt U U      &kp I          &kp O            &kp P            &kp BACKSPACE
+&kp TAB     &mt LGUI Q  &mt LEFT_ALT S  &mt LSHIFT D  &mt LCTRL F  &kp G        &kp H      &mt RCTRL J  &mt RSHFT K    &mt RIGHT_ALT L  &mt RGUI M       &kp DELETE
+&none       &kp W       &kp X           &mt C C       &kp V        &kp B        &kp N      &kp COMMA    &kp SEMICOLON  &kp COLON        &kp EXCLAMATION  &kp ASTERISK
+                                        &kp LGUI      &mo 1        &kp ENTER    &kp SPACE  &mo 2        &kp RALT
             >;
         };
 
@@ -46,10 +46,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp ESCAPE        &kp A   &trans  &kp E     &trans  &trans       &trans     &kp U   &trans    &trans  &trans  &trans
-&kp LEFT_SHIFT    &trans  &trans  &trans    &trans  &trans       &trans     &trans  &trans    &trans  &trans  &kp BACKSPACE
-&kp LEFT_CONTROL  &trans  &trans  &kp C     &trans  &trans       &trans     &trans  &trans    &trans  &trans  &trans
-                                  &kp LGUI  &trans  &kp ENTER    &kp SPACE  &trans  &kp RALT
+&kp ESCAPE        &kp A  &kp  &kp E     &kp  &kp          &kp MINUS  &kp N7  &kp N8    &kp N9  &kp SLASH     &kp BACKSPACE
+&kp LEFT_SHIFT    &kp    &kp  &kp       &kp  &kp          &kp PLUS   &kp N4  &kp N5    &kp N6  &kp ASTERISK  &kp HOME
+&kp LEFT_CONTROL  &kp    &kp  &kp       &kp  &kp          &kp N0     &kp N1  &kp N2    &kp N3  &kp COMMA     &kp END
+                              &kp LGUI  &kp  &kp ENTER    &kp SPACE  &kp     &kp RALT
             >;
         };
 
@@ -62,19 +62,28 @@
 
             display-name = "Raise";
             bindings = <
-&kp ESCAPE        &kp AMPERSAND  &kp HASH  &kp E     &kp DOUBLE_QUOTES     &kp SQT                  &kp MINUS         &kp UNDERSCORE     &kp PIPE       &kp AT_SIGN  &kp EQUAL  &kp BSPC
-&kp LEFT_SHIFT    &kp TILDE      &trans    &trans    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans       &trans     &trans
-&kp LEFT_CONTROL  &trans         &trans    &trans    &kp LESS_THAN         &kp GREATER_THAN         &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans         &trans       &trans     &trans
+&kp ESCAPE        &kp AMPERSAND  &kp HASH  &kp E     &kp SINGLE_QUOTE      &kp DOUBLE_QUOTES        &kp MINUS         &kp UNDERSCORE     &kp PIPE       &kp AT_SIGN  &kp EQUAL  &kp LC(BACKSPACE)
+&kp LEFT_SHIFT    &kp TILDE      &trans    &trans    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp UP       &trans     &kp LC(DEL)
+&kp LEFT_CONTROL  &trans         &trans    &trans    &kp LESS_THAN         &kp GREATER_THAN         &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LEFT       &kp DOWN     &kp RIGHT  &trans
                                            &kp LGUI  &trans                &trans                   &trans            &trans             &kp RALT
+            >;
+        };
+
+        macro1 {
+            bindings = <
+&none  &none  &none  &none  &mt LC(X) LC(C)  &kp LC(V)    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none            &none        &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none            &none        &none  &none  &none  &none  &none  &none
+                     &none  &none            &kp ENTER    &none  &none  &none
             >;
         };
 
         config_layer {
             bindings = <
-&kp ESCAPE      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR      &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                                            &trans        &trans        &trans          &trans  &trans  &trans
+&kp ESCAPE      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
+&bt BT_CLR      &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
+&bt BT_CLR_ALL  &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
+                                            &none         &none         &none           &none  &none  &none
             >;
         };
     };
